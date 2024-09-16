@@ -8,12 +8,12 @@
           </li>
           <li class="au-c-list-navigation__item">
             <AuNavigationLink role="menuitem">
-              Nieuwste updates <span class="c-list-navigation__counter">4</span>
+              Nieuwste updates <span class="c-list-navigation__counter">1</span>
             </AuNavigationLink>
           </li>
           <li class="au-c-list-navigation__item">
             <AuNavigationLink role="menuitem">
-              Deadline verstreken <span class="c-list-navigation__counter">3</span>
+              Deadline verstreken
             </AuNavigationLink>
           </li>
           <li class="au-c-list-navigation__item">
@@ -131,11 +131,11 @@
                 <card.header class="au-u-padding-bottom-none">
                   <div class="c-overview-card__header">
                     <div class="au-u-flex au-u-flex--vertical-center au-u-flex--spaced-tiny">
-                      <AuLinkExternal href={{item.link}} class="au-u-h6 au-u-medium c-overview-card__link">
+                      <AuLink @route="submission" class="au-u-h6 au-u-medium c-overview-card__link">
                         {{item.name}}
-                      </AuLinkExternal>
+                      </AuLink>
                       {{#if (eq item.status 'Actief - Aanvraag doorgestuurd')}}
-                      <AuPill @skin="success" @size="small" >
+                      <AuPill @skin="ongoing" @size="small" >
                         {{item.status}}
                       </AuPill>
                       {{else if (eq item.status 'Actief')}}

@@ -15,6 +15,9 @@ Router.map(function () {
   this.route('cases', function () {
     this.route('search');
   });
+  this.route('submission', function () {
+    this.route('submitted');
+  });
   this.route('email');
   this.route('settings', function () {
     this.route('newsletter');

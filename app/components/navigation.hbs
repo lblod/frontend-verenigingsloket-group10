@@ -58,7 +58,7 @@
         <AuLink @route="dashboard.index" role="menuitem">
           <AuIcon @icon="tiles" />Alle diensten
         </AuLink>
-        <AuLink @route="cases" role="menuitem"><AuIcon @icon="subsidies" />Mijn dossiers <span class="c-counter">1</span></AuLink>
+        <AuLink @route="cases" role="menuitem"><AuIcon @icon="subsidies" />Mijn dossiers {{#if @cases}}<span class="c-counter">{{@cases}}</span>{{/if}}</AuLink>
         {{!-- <AuLink @route="data" role="menuitem"><AuIcon @icon="datasource" />Mijn gegevens</AuLink> --}}
         {{!-- <AuLink role="menuitem" @route="messages"><AuIcon @icon="message" />Berichten <span class="c-counter">3</span></AuLink> --}}
       </div>
@@ -73,7 +73,7 @@
         </AuLink>
       </Tab>
       <Tab>
-        <AuLink @route="cases" role="menuitem"><AuIcon @icon="subsidies" />Mijn dossiers <span class="c-counter">1</span></AuLink>
+        <AuLink @route="cases" role="menuitem"><AuIcon @icon="subsidies" />Mijn dossiers {{#if @cases}}<span class="c-counter">{{@cases}}</span>{{/if}}</AuLink>
       </Tab>
       {{!-- <Tab>
         <AuLink @route="data" role="menuitem"><AuIcon @icon="datasource" />Mijn gegevens</AuLink>
