@@ -1,5 +1,5 @@
 import { module, test } from 'qunit';
-import { setupTest } from 'loket/tests/helpers';
+import { setupTest } from 'verenigingsloket/tests/helpers';
 
 module('Unit | Route | dashboard/updates', function (hooks) {
   setupTest(hooks);

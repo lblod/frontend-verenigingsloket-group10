@@ -1,5 +1,5 @@
-import Application from 'loket/app';
-import config from 'loket/config/environment';
+import Application from 'verenigingsloket/app';
+import config from 'verenigingsloket/config/environment';
 import * as QUnit from 'qunit';
 import { setApplication } from '@ember/test-helpers';
 import { setup } from 'qunit-dom';
