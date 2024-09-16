@@ -2,7 +2,7 @@ export const productData = [
   {
     "favorite": "false",
     "name": "Inname openbaar domein voor een wielerwedstrijd",
-    "description": "Raadpleeg en hergebruik de gegevens van lokale mandatarissen in deze publiek toegankelijke mandatendatabank",
+    "description": "Inname van het openbaar domein voor de organisatie van een sportwedstrijd met nationale en internationale uitstraling",
     "Startdatum dienstverlening": "",
     "Einddatum dienstverlening": "nvt",
     "categorie": "Vergunning",
@@ -19,7 +19,7 @@ export const productData = [
     "Bevoegde organisaties": "https://wegwijs.vlaanderen.be/#/organisations/OVO001835",
     "Uitvoerende bestuursniveau’s": "Vlaamse overheid",
     "Uitvoerende organisaties": "",
-    "link": "https://mandaten.lokaalbestuur.vlaanderen.be/",
+    "link": "#!",
     "Regelgeving": "",
     "Links naar Vlaamse codex": "",
     "Productnummer": "2229",
