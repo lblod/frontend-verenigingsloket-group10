@@ -13,8 +13,8 @@ export default class SubmissionsSubmissionController extends Controller {
 
     // TODO generate submissions for administrative-units
     const municipalityGent = await this.store.queryOne('administrative-unit', {
-      'filter[classification]': 'https://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001', // Gemeente
-      'filter[name]': 'Gent'
+      'filter[classification]': 'http://data.vlaanderen.be/id/concept/BestuurseenheidClassificatieCode/5ab0e9b8a3b2ca7c5e000001', // Gemeente
+      'filter[:exact:name]': 'Gent'
     });
 
     for (let administrativeUnit of [municipalityGent]) {
