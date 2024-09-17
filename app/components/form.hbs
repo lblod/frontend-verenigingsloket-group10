@@ -1,0 +1,455 @@
+<div class="au-c-form">
+  <AuHeading @level="2" @skin="4">Algemene informatie</AuHeading>
+  <AuHr />
+  <AuFormRow>
+    <AuLabel>
+      Naam
+    </AuLabel>
+    <AuInput @width="block" />
+  </AuFormRow>
+  <AuFormRow>
+    <AuLabel>
+      Datum wedstrijd
+    </AuLabel>
+    <AuDatePicker />
+  </AuFormRow>
+</div>
+<div class="au-c-form">
+  <AuHeading @level="2" @skin="4">Aard van de wielerwedstrijd</AuHeading>
+  <AuHr />
+  <div class="au-o-grid au-o-grid--flush">
+    <AuFormRow class="au-o-grid__item au-u-1-2@medium">
+      <AuFieldset as |f|>
+        <f.legend>
+          <AuRadio
+            @name="type"
+            @value="typeOne"
+          >
+            Wegwedstrijd
+          </AuRadio>
+        </f.legend>
+        <f.content class="au-u-margin-left-small">
+          <AuRadioGroup
+            @name="roadRace"
+            as |Group|
+          >
+            <Group.Radio @value="roadRaceOne">Individuele wedstrijd</Group.Radio>
+            <Group.Radio @value="roadRaceTwo">Wedstrijd met ploegen</Group.Radio>
+          </AuRadioGroup>
+          <AuRadioGroup
+            @name="roadRaceTwo"
+            class="au-u-margin-left"
+            as |Group|
+          >
+            <Group.Radio @value="roadRaceTwoOne">Wedstrijd op gesloten omloop</Group.Radio>
+            <Group.Radio @value="roadRaceTwoTwo">Wedstrijd op open omloop</Group.Radio>
+            <Group.Radio @value="roadRaceTwoTwo">Wedstrijd in lijn</Group.Radio>
+            <Group.Radio @value="roadRaceTwoTwo">Tijdrit</Group.Radio>
+          </AuRadioGroup>
+        </f.content>
+      </AuFieldset>
+    </AuFormRow>
+    <AuFormRow class="au-o-grid__item au-u-1-2@medium">
+      <AuFieldset as |f|>
+        <f.legend>
+          <AuRadio
+            @name="type"
+            @value="typeTwo"
+          >
+            Terreinwedstrijd
+          </AuRadio>
+        </f.legend>
+        <f.content class="au-u-margin-left-small">
+          <AuRadioGroup
+            @name="terrainRace"
+            as |Group|
+          >
+            <Group.Radio @value="terrainRaceOne">BMX</Group.Radio>
+            <Group.Radio @value="terrainRaceTwo">Cyclocross</Group.Radio>
+            <Group.Radio @value="terrainRaceThree">Mountainbike</Group.Radio>
+            <Group.Radio @value="terrainRaceFour">Trial</Group.Radio>
+          </AuRadioGroup>
+        </f.content>
+      </AuFieldset>
+    </AuFormRow>
+  </div>
+</div>
+<div class="au-c-form">
+  <AuHeading @level="2" @skin="4">Categorie(en) van wielrenners welke aan de wedstrijd mogen deelnemen</AuHeading>
+  <AuHr />
+  <AuFormRow @alignment="default">
+    <AuFieldset as |f|>
+      <f.content>
+        <AuRadioGroup
+          @name="radios"
+          @alignment="inline"
+          as |Group|
+        >
+          <Group.Radio @value="radioOne">M</Group.Radio>
+          <Group.Radio @value="radioTwo">V</Group.Radio>
+          <Group.Radio @value="radioTwo">M/V</Group.Radio>
+        </AuRadioGroup>
+      </f.content>
+    </AuFieldset>
+  </AuFormRow>
+  <AuFormRow @alignment="default">
+    <AuFieldset as |f|>
+      <f.legend>Licentie</f.legend>
+      <f.content>
+        <AuRadioGroup
+          @name="radios"
+          @alignment="inline"
+          class="au-c-radiogroup--grid"
+          as |Group|
+        >
+          <Group.Radio @value="radioOne">Elites met contract</Group.Radio>
+          <Group.Radio @value="radioTwo">Elites zonder contract</Group.Radio>
+          <Group.Radio @value="radioThree">Beloften (U23)</Group.Radio>
+          <Group.Radio @value="radioThree">Juniores (U19)</Group.Radio>
+          <Group.Radio @value="radioThree">Nieuwelingen (U17)</Group.Radio>
+          <Group.Radio @value="radioThree">Aspiranten</Group.Radio>
+          <Group.Radio @value="radioThree">Miniemen</Group.Radio>
+          <Group.Radio @value="radioThree">Masters</Group.Radio>
+          <Group.Radio @value="radioThree">Amateurs</Group.Radio>
+          <Group.Radio @value="radioThree">Gentlemen</Group.Radio>
+          <Group.Radio @value="radioThree">G-wielrenners</Group.Radio>
+        </AuRadioGroup>
+      </f.content>
+    </AuFieldset>
+  </AuFormRow>
+</div>
+<div class="au-c-form">
+  <AuHeading @level="2" @skin="4">Inlichtingen betreffende de het tijdstip en de plaats van de wedstrijd</AuHeading>
+  <AuHr />
+  <AuFormRow>
+    <AuLabel>
+      Startuur
+    </AuLabel>
+    <AuTimePicker />
+  </AuFormRow>
+  <AuFormRow>
+    <AuLabel>
+      Vermoedelijk aankomstuur
+    </AuLabel>
+    <AuTimePicker />
+  </AuFormRow>
+  <AuFormRow>
+    <AuLabel>
+      Plaats van vertrek
+    </AuLabel>
+    <AuInput @width="block" />
+  </AuFormRow>
+  <AuFormRow>
+    <AuLabel>
+      Plaats van aankomst
+    </AuLabel>
+    <AuInput @width="block" />
+  </AuFormRow>
+</div>
+<div class="au-c-form">
+  <AuHeading @level="2" @skin="4">Publiciteitskaravaan</AuHeading>
+  <AuHr />
+  <AuFormRow>
+    <AuLabel>
+      Is er een publiciteitskaravaan voorzien?
+   </AuLabel>
+    <AuRadioGroup
+      @name="publicity"
+      @alignment="inline"
+      as |Group|
+    >
+      <Group.Radio @value="publicityOne">Ja</Group.Radio>
+      <Group.Radio @value="publicityTwo">Nee</Group.Radio>
+    </AuRadioGroup>
+  </AuFormRow>
+  <AuFormRow>
+    <AuLabel>
+      Aantal voertuigen
+    </AuLabel>
+    <AuInput @width="block" />
+  </AuFormRow>
+</div>
+<div class="au-c-form">
+  <AuHeading @level="2" @skin="4">Inlichtingen betreffende het parcours van de wedstrijd</AuHeading>
+  <AuHr />
+  <AuFormRow @alignment="inline">
+    <AuLabel>
+      Totale afstand van de wedstrijd:
+   </AuLabel>
+   <AuFormRow
+      @alignment="post"
+    >
+      <AuLabel for="input">
+        Km
+      </AuLabel>
+      <AuInput id="input" />
+    </AuFormRow>
+  </AuFormRow>
+  <AuFormRow>
+    <AuLabel>
+      Het totale parcours is samengesteld uit:
+   </AuLabel>
+   <div class="au-c-form__table">
+     <AuTable
+        @size="small"
+      >
+        <:header>
+          <tr>
+            <th>Ronde</th>
+            <th>Km</th>
+          </tr>
+        </:header>
+        <:body>
+          <tr>
+            <td colspan="2">
+              <AuAlert @skin="info" @size="small" class="au-u-margin-bottom-none">Nog geen rondes toegevoegd</AuAlert>
+            </td>
+          </tr>
+        </:body>
+        <:footer>
+          <tr>
+            <td>
+              <AuButton @icon="plus" @skin="link" {{on "click" (fn (mut this.parcoursModalOpen) true)}}>Rij toevoegen</AuButton>
+            </td>
+          </tr>
+        </:footer>
+      </AuTable>
+    </div>
+  </AuFormRow>
+  <AuFormRow>
+    <AuLabel>
+      Voor de wedstrijden in lijn wordt een parcours toegevoegd onder de vorm van een tabel, met minstens volgende gegevens:
+    </AuLabel>
+    <div class="au-c-form__table">
+     <AuTable
+        @size="small"
+      >
+        <:header>
+          <tr>
+            <th>Gemeente</th>
+            <th>Aantal afgelegde km</th>
+            <th>Tijdstip van doorkomst</th>
+          </tr>
+        </:header>
+        <:body>
+          <tr>
+            <td colspan="3">
+              <AuAlert @skin="info" @size="small" class="au-u-margin-bottom-none">Nog geen parcours toegevoegd</AuAlert>
+            </td>
+          </tr>
+        </:body>
+        <:footer>
+          <tr>
+            <td>
+              <AuButton @icon="plus" @skin="link" {{on "click" (fn (mut this.inlineParcoursModalOpen) true)}}>Rij toevoegen</AuButton>
+            </td>
+          </tr>
+        </:footer>
+      </AuTable>
+    </div>
+  </AuFormRow>
+  <AuFormRow>
+    <AuLabel>
+      De toelating tot gebruik van de terreinen van het niet-openbaar domein is bijgevoegd aan deze vergunningsaanvraag
+    </AuLabel>
+    <AuFileUpload class="au-u-1-1 au-u-margin-top-tiny" />
+  </AuFormRow>
+</div>
+<div class="au-c-form">
+  <AuHeading @level="2" @skin="4">Identiteit van de koersdirecteur</AuHeading>
+  <AuHr />
+  <AuFormRow @alignment="inline">
+    <AuLabel class="au-c-label--fixed">
+      Naam
+    </AuLabel>
+    <AuInput @width="block" />
+  </AuFormRow>
+  <AuFormRow @alignment="inline">
+    <AuLabel class="au-c-label--fixed">
+      Voornaam
+    </AuLabel>
+    <AuInput @width="block" />
+  </AuFormRow>
+  <AuFormRow @alignment="inline">
+    <AuLabel class="au-c-label--fixed">
+      Adres
+    </AuLabel>
+    <AuInput @width="block" />
+  </AuFormRow>
+  <AuFormRow @alignment="inline">
+    <AuLabel class="au-c-label--fixed">
+      Postcode
+    </AuLabel>
+    <AuInput @width="block" />
+  </AuFormRow>
+  <AuFormRow @alignment="inline">
+    <AuLabel class="au-c-label--fixed">
+      Gemeente
+    </AuLabel>
+    <AuInput @width="block" />
+  </AuFormRow>
+  <AuFormRow @alignment="inline">
+    <AuLabel class="au-c-label--fixed">
+      Rijksregisternummer
+    </AuLabel>
+    <AuInput @width="block" />
+  </AuFormRow>
+  <AuFormRow @alignment="inline">
+    <AuLabel class="au-c-label--fixed">
+      Telefoonnummer
+    </AuLabel>
+    <AuInput @width="block" />
+  </AuFormRow>
+  <AuFormRow @alignment="inline">
+    <AuLabel class="au-c-label--fixed">
+      GSM-nummer
+    </AuLabel>
+    <AuInput @width="block" />
+  </AuFormRow>
+  <AuFormRow @alignment="inline">
+    <AuLabel class="au-c-label--fixed">
+      E-maiadres
+    </AuLabel>
+    <AuInput @width="block" />
+  </AuFormRow>
+</div>
+<div class="au-c-form">
+  <AuHeading @level="2" @skin="4">Identiteit van de veiligheidscoördinator</AuHeading>
+  <AuHr />
+  <AuFormRow @alignment="inline">
+    <AuLabel class="au-c-label--fixed">
+      Naam
+    </AuLabel>
+    <AuInput @width="block" />
+  </AuFormRow>
+  <AuFormRow @alignment="inline">
+    <AuLabel class="au-c-label--fixed">
+      Voornaam
+    </AuLabel>
+    <AuInput @width="block" />
+  </AuFormRow>
+  <AuFormRow @alignment="inline">
+    <AuLabel class="au-c-label--fixed">
+      Adres
+    </AuLabel>
+    <AuInput @width="block" />
+  </AuFormRow>
+  <AuFormRow @alignment="inline">
+    <AuLabel class="au-c-label--fixed">
+      Postcode
+    </AuLabel>
+    <AuInput @width="block" />
+  </AuFormRow>
+  <AuFormRow @alignment="inline">
+    <AuLabel class="au-c-label--fixed">
+      Gemeente
+    </AuLabel>
+    <AuInput @width="block" />
+  </AuFormRow>
+  <AuFormRow @alignment="inline">
+    <AuLabel class="au-c-label--fixed">
+      Rijksregisternummer
+    </AuLabel>
+    <AuInput @width="block" />
+  </AuFormRow>
+  <AuFormRow @alignment="inline">
+    <AuLabel class="au-c-label--fixed">
+      Telefoonnummer
+    </AuLabel>
+    <AuInput @width="block" />
+  </AuFormRow>
+  <AuFormRow @alignment="inline">
+    <AuLabel class="au-c-label--fixed">
+      GSM-nummer
+    </AuLabel>
+    <AuInput @width="block" />
+  </AuFormRow>
+  <AuFormRow @alignment="inline">
+    <AuLabel class="au-c-label--fixed">
+      E-maiadres
+    </AuLabel>
+    <AuInput @width="block" />
+  </AuFormRow>
+</div>
+
+{{!-- Total parcours modal --}}
+<AuModal
+  @modalOpen={{this.parcoursModalOpen}}
+  @closable={{this.closable}}
+  @closeModal={{fn (mut this.parcoursModalOpen) false}}
+  @size={{this.size}}
+  @padding={{this.padding}}
+  @overflow={{this.overflow}}
+>
+  <:title>Rij toevoegen</:title>
+  <:body>
+    <div class="au-o-flow">
+      <AuFormRow @alignment="inline">
+        <AuLabel>
+          Aantal rondes
+        </AuLabel>
+        <AuInput />
+      </AuFormRow>
+      <AuFormRow @alignment="inline">
+        <AuLabel>
+          Ronde Km:
+        </AuLabel>
+        <AuFormRow
+            @alignment="post"
+          >
+            <AuLabel for="input">
+              Km
+            </AuLabel>
+            <AuInput id="input" />
+        </AuFormRow>
+      </AuFormRow>
+    </div>
+  </:body>
+  <:footer>
+    <AuButton {{on "click" (fn (mut this.parcoursModalOpen) false)}}>Rij toevoegen</AuButton>
+  </:footer>
+</AuModal>
+
+{{!-- Inline Parcour modal --}}
+<AuModal
+  @modalOpen={{this.inlineParcoursModalOpen}}
+  @closable={{this.closable}}
+  @closeModal={{fn (mut this.inlineParcoursModalOpen) false}}
+  @size={{this.size}}
+  @padding={{this.padding}}
+  @overflow={{this.overflow}}
+>
+  <:title>Rij toevoegen</:title>
+  <:body>
+    <div class="au-o-flow">
+      <AuFormRow @alignment="inline">
+        <AuLabel>
+          Gemeente
+        </AuLabel>
+        <AuInput />
+      </AuFormRow>
+       <AuFormRow @alignment="inline">
+        <AuLabel>
+          Aantal afgelegde km:
+        </AuLabel>
+        <AuFormRow
+            @alignment="post"
+          >
+            <AuLabel for="input">
+              Km
+            </AuLabel>
+            <AuInput id="input" />
+        </AuFormRow>
+      </AuFormRow>
+      <AuFormRow @alignment="inline">
+        <AuLabel>
+          Tijdstip van doorkomst
+        </AuLabel>
+        <AuTimePicker />
+      </AuFormRow>
+    </div>
+  </:body>
+  <:footer>
+    <AuButton {{on "click" (fn (mut this.inlineParcoursModalOpen) false)}}>Rij toevoegen</AuButton>
+  </:footer>
+</AuModal>

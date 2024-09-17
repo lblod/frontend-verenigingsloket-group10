@@ -4,4 +4,48 @@
   border-radius: var(--au-radius);
   box-shadow: 0 0 3px rgba(33,35,38,.1);
   background: var(--au-white);
+
+  & + & {
+    margin-top: 0;
+  }
+}
+
+.au-c-radiogroup--grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $au-unit-small;
+
+  > * {
+    width: 15%;
+  }
+
+  @media (max-width: 768px) {
+    > * {
+      width: 50%;
+    }
+  }
+}
+
+.au-c-time-picker__box > button {
+  display: none;
+}
+
+.au-c-form__table {
+  margin-top: $au-unit-tiny;
+  width: 100%;
+  border: 1px solid var(--au-gray-300);
+  border-radius: var(--au-radius);
+  overflow: hidden;
+  & > .au-c-table-wrapper {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  tr:last-child {
+    border-bottom: 0;
+  }
+}
+
+.au-c-label--fixed {
+  width: 200px;
 }
