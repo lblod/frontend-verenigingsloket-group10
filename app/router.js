@@ -17,6 +17,7 @@ Router.map(function () {
   });
   this.route('submission', function () {
     this.route('submitted');
+    this.route('submitted-form');
   });
   this.route('email');
   this.route('settings', function () {

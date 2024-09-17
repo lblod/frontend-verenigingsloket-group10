@@ -28,31 +28,7 @@
         </div>
         <div class="au-o-grid__item au-u-3-4">
           <AuBodyContainer @scroll={{true}}>
-            <div class="au-c-form">
-              <AuHeading @level="2" @skin="4">Status</AuHeading>
-              <AuHr />
-              <AuFormRow>
-                <ul class="au-c-list">
-                  <li><AuPill @skin="ongoing" @icon="circle-step-1">Ingediend bij Stad Gent</AuPill></li>
-                  <li><AuPill @skin="warning" @icon="circle-step-3">Geagendeerd bij Gemeente Destelbergen</AuPill></li>
-                  <li><AuPill @skin="ongoing" @icon="circle-step-1">Ingediend bij Stad Ninove</AuPill></li>
-                  <li><AuPill @skin="neutral" @icon="circle-pause">AWV goedkeuring nog niet verstuurd</AuPill></li>
-                </ul>
-              </AuFormRow>
-            </div>
-            <div class="au-c-form">
-              <AuHeading @level="2" @skin="4">Geschiedenis</AuHeading>
-              <AuHr />
-              <AuFormRow>
-                <ol class="au-u-1-1 au-c-list-steps">
-                  <li>Geagendeerd bij <strong>Gemeente Destelbergen</strong> op 18/09/2024</li>
-                  <li>Automatisch verstuurd naar <strong>Gemeente Destelbergen</strong> op 17/09/2024</li>
-                  <li>Automatisch verstuurd naar <strong>Stad Ninove</strong> op 17/09/2024</li>
-                  <li>Automatisch verstuurd naar <strong>Stad Gent</strong> op 17/09/2024</li>
-                  <li>Ingediend op 17/09/2024</li>
-                </ol>
-              </AuFormRow>
-            </div>
+            <FormDisabled />
           </AuBodyContainer>
         </div>
       </div>
