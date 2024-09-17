@@ -371,6 +371,40 @@
     <AuInput @width="block" />
   </AuFormRow>
 </div>
+<div class="au-c-form">
+  <AuHeading @level="2" @skin="4">Bepijling</AuHeading>
+  <AuHr />
+  <AuFormRow>
+    <AuLabel>
+      De organisatie zorgt voor bepijling vanaf:
+    </AuLabel>
+    <AuDatePicker />
+  </AuFormRow>
+  <AuFormRow>
+    <AuLabel>
+      Deze pijlen zullen worden verwijderd uiterlijk op:
+    </AuLabel>
+    <AuDatePicker />
+  </AuFormRow>
+</div>
+
+<div class="au-c-form">
+  <AuHeading @level="2" @skin="4">Doortochten op overwegen</AuHeading>
+  <AuHr />
+  <AuFormRow @alignment="default">
+    <AuFieldset as |f|>
+      <f.content>
+        <AuRadioGroup
+          @name="crossing"
+          as |Group|
+        >
+          <Group.Radio @value="crossingOne">Er worden geen overwegen gekruist op het voorziene parcours</Group.Radio>
+          <Group.Radio @value="crossingTwo">Er worden één of meerdere overwegen gekruist op het voorziene parcours</Group.Radio>
+        </AuRadioGroup>
+      </f.content>
+    </AuFieldset>
+  </AuFormRow>
+</div>
 
 {{!-- Total parcours modal --}}
 <AuModal
