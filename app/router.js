@@ -15,7 +15,9 @@ Router.map(function () {
   this.route('cases', function () {
     this.route('search');
   });
-  this.route('submission', function () {
+  this.route('submissions', function () {
+    this.route('new');
+    this.route('submission', { path: '/submission/:id' });
     this.route('submitted');
     this.route('submitted-form');
   });
