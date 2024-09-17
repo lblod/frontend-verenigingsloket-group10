@@ -250,9 +250,63 @@
   </AuFormRow>
   <AuFormRow>
     <AuLabel>
+      Begeleiding federale politie
+    </AuLabel>
+    <AuFieldset as |f|>
+      <f.content>
+        <AuRadioGroup
+          @name="crossing"
+          as |Group|
+        >
+          <Group.Radio @value="crossingOne">Er is geen begeleiding van de federale politie gevraagd</Group.Radio>
+          <Group.Radio @value="crossingTwo">Er is wel begeleiding van de federale politie gevraagd</Group.Radio>
+        </AuRadioGroup>
+      </f.content>
+    </AuFieldset>
+  </AuFormRow>
+  <AuFormRow>
+    <AuLabel>
+      Gemeentelijk plan met aanduiding van het parcours volgende kleuren:
+    </AuLabel>
+    <AuHelpText @skin="secondary">
+      - rood: voor de gewestwegen<br>
+      - groen: voor de gemeentewegen<br>
+      - zwarte pijltjes: koersrichting<br>
+      - vertrek een aankomst zijn aangeduid met een zwarte streep en de letter V en A.<br>
+      - het kruisen van de gewestwegen is met een rode dwarsstreep aangeduid
+    </AuHelpText>
+    <AuFileUpload class="au-u-1-1 au-u-margin-top" />
+  </AuFormRow>
+  <AuFormRow>
+    <AuLabel>
       De toelating tot gebruik van de terreinen van het niet-openbaar domein is bijgevoegd aan deze vergunningsaanvraag
     </AuLabel>
     <AuFileUpload class="au-u-1-1 au-u-margin-top-tiny" />
+  </AuFormRow>
+  
+  <AuFormRow>
+    <AuLabel>
+      Parcours in gpx-formaat
+    </AuLabel>
+    <AuFileUpload class="au-u-1-1 au-u-margin-top-tiny" />
+  </AuFormRow>
+</div>
+<div class="au-c-form">
+  <AuHeading @level="2" @skin="4">Afleidingstraject</AuHeading>
+  <AuHr />
+  <AuFormRow @alignment="default">
+    <AuCheckbox
+      @name="diversion"
+    >
+      Op het parcours wordt er een afleidingstraject voorgesteld
+    </AuCheckbox>
+  </AuFormRow>
+  <AuFormRow @alignment="default">
+    <AuCheckbox
+      @name="diversionArrival"
+    >
+      In de aankomstzone wordt er een afleidingstraject voorgesteld
+    </AuCheckbox>
   </AuFormRow>
 </div>
 <div class="au-c-form">
@@ -308,7 +362,7 @@
   </AuFormRow>
   <AuFormRow @alignment="inline">
     <AuLabel class="au-c-label--fixed">
-      E-maiadres
+      E-mailadres
     </AuLabel>
     <AuInput @width="block" />
   </AuFormRow>
@@ -366,9 +420,79 @@
   </AuFormRow>
   <AuFormRow @alignment="inline">
     <AuLabel class="au-c-label--fixed">
-      E-maiadres
+      E-mailadres
     </AuLabel>
     <AuInput @width="block" />
+  </AuFormRow>
+</div>
+<div class="au-c-form">
+  <AuHeading @level="2" @skin="4">Bevoorradingszone</AuHeading>
+  <AuHr />
+  <AuFormRow>
+    <AuLabel>
+      Er wordt toestemming gevraagd om een bevoorradingszone te voorzien vanaf.
+   </AuLabel>
+   <div class="au-c-form__table">
+     <AuTable
+        @size="small"
+      >
+        <:header>
+          <tr>
+            <th>Van</th>
+            <th>Tot aan</th>
+          </tr>
+        </:header>
+        <:body>
+          <tr>
+            <td colspan="2">
+              <AuAlert @skin="info" @size="small" class="au-u-margin-bottom-none">Nog geen zones toegevoegd</AuAlert>
+            </td>
+          </tr>
+        </:body>
+        <:footer>
+          <tr>
+            <td>
+              <AuButton @icon="plus" @skin="link">Rij toevoegen</AuButton>
+            </td>
+          </tr>
+        </:footer>
+      </AuTable>
+    </div>
+  </AuFormRow>
+</div>
+<div class="au-c-form">
+  <AuHeading @level="2" @skin="4">Wegwerpzone</AuHeading>
+  <AuHr />
+  <AuFormRow>
+    <AuLabel>
+      Er wordt toestemming gevraagd om een wegwerpzone te voorzien vanaf.
+   </AuLabel>
+   <div class="au-c-form__table">
+     <AuTable
+        @size="small"
+      >
+        <:header>
+          <tr>
+            <th>Van</th>
+            <th>Tot aan</th>
+          </tr>
+        </:header>
+        <:body>
+          <tr>
+            <td colspan="2">
+              <AuAlert @skin="info" @size="small" class="au-u-margin-bottom-none">Nog geen zones toegevoegd</AuAlert>
+            </td>
+          </tr>
+        </:body>
+        <:footer>
+          <tr>
+            <td>
+              <AuButton @icon="plus" @skin="link">Rij toevoegen</AuButton>
+            </td>
+          </tr>
+        </:footer>
+      </AuTable>
+    </div>
   </AuFormRow>
 </div>
 <div class="au-c-form">
@@ -387,7 +511,6 @@
     <AuDatePicker />
   </AuFormRow>
 </div>
-
 <div class="au-c-form">
   <AuHeading @level="2" @skin="4">Doortochten op overwegen</AuHeading>
   <AuHr />
@@ -403,6 +526,50 @@
         </AuRadioGroup>
       </f.content>
     </AuFieldset>
+  </AuFormRow>
+</div>
+<div class="au-c-form">
+  <AuHeading @level="2" @skin="4">Doortochten over beweegbare bruggen (tijdens de duur van de wedstrijd)</AuHeading>
+  <AuHr />
+  <AuFormRow>
+    <AuLabel>
+      Er is een doortocht over een beweegbare brug voorzien op kilometerpunt:
+   </AuLabel>
+   <div class="au-c-form__table">
+     <AuTable
+        @size="small"
+      >
+        <:header>
+          <tr>
+            <th>Kilometerpunt</th>
+          </tr>
+        </:header>
+        <:body>
+          <tr>
+            <td colspan="2">
+              <AuAlert @skin="info" @size="small" class="au-u-margin-bottom-none">Nog geen punten toegevoegd</AuAlert>
+            </td>
+          </tr>
+        </:body>
+        <:footer>
+          <tr>
+            <td>
+              <AuButton @icon="plus" @skin="link">Rij toevoegen</AuButton>
+            </td>
+          </tr>
+        </:footer>
+      </AuTable>
+    </div>
+  </AuFormRow>
+</div>
+<div class="au-c-form">
+  <AuHeading @level="2" @skin="4">Volgbewijzen / samenstelling wedstrijdkaravaan</AuHeading>
+  <AuHr />
+  <AuFormRow @alignment="inline">
+    <AuLabel>
+      Aantal voertuigen waarvoor de koersdirecteur voornemens is volgbewijzen af te leveren
+    </AuLabel>
+    <AuInput @width="block" />
   </AuFormRow>
 </div>
 
