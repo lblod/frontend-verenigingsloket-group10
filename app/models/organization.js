@@ -5,4 +5,5 @@ export default class OrganizationModel extends Model {
   @attr('string') name;
 
   @hasMany('user', { inverse: 'organization', async: true }) users;
+  @hasMany('submission', { inverse: 'applicant', async: true }) submissions;
 }

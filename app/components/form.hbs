@@ -5,7 +5,10 @@
     <AuLabel>
       Naam
     </AuLabel>
-    <AuInput @width="block" />
+    <AuInput
+      value={{@model.description}}
+      @width="block"
+      {{on "input" (with-value (fn (mut @model.description)))}} />
   </AuFormRow>
   <AuFormRow>
     <AuLabel>
@@ -283,7 +286,7 @@
     </AuLabel>
     <AuFileUpload class="au-u-1-1 au-u-margin-top-tiny" />
   </AuFormRow>
-  
+
   <AuFormRow>
     <AuLabel>
       Parcours in gpx-formaat

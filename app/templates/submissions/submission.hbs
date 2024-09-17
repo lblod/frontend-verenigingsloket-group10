@@ -7,11 +7,11 @@
         </Group>
       </AuToolbar>
       <AuBodyContainer @scroll={{true}}>
-        <Form />
+        <Form @model={{this.model.event}} />
       </AuBodyContainer>
       <AuToolbar @border="top" @size="medium" as |Group|>
         <Group>
-          <AuLink @skin="button" @route="cases">Indienen</AuLink>
+          <AuButton {{on "click" this.submit}}>Indienen</AuButton>
           <AuLink @skin="button-naked" @route="dashboard">Annuleer</AuLink>
         </Group>
         <Group>

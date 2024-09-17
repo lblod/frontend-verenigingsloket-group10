@@ -5,6 +5,6 @@ export default class CaseModel extends Model {
   @attr('datetime') created;
 
   @belongsTo('identifier', { inverse: 'case', async: true }) identifier;
-  @belongsTo('event', { inverse: 'case', async: true }) event;
+  @belongsTo('event', { inverse: 'cases', async: true }) event;
   @hasMany('submission', { inverse: 'case', async: true }) submissions;
 }
