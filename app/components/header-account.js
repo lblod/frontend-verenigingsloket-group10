@@ -2,8 +2,11 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { modifier } from 'ember-modifier';
+import { service } from '@ember/service';
 
 export default class HeaderAccount extends Component {
+  @service userProfile;
+
   @tracked referenceElement = undefined;
   @tracked arrowElement = undefined;
   @tracked dropdownOpen = false;
