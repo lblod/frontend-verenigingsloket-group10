@@ -3,10 +3,36 @@
     <AuBodyContainer class="au-u-background-gray-100">
       <AuToolbar @border="bottom" @size="medium" as |Group|>
         <Group class="au-u-1-1">
-          <AuHeading @level="1" @skin="2">Aanvraag: inname openbaar domein voor een wielerwedstrijd</AuHeading>
+          <AuHeading @level="1" @skin="2">Inname openbaar domein voor een wielerwedstrijd</AuHeading>
         </Group>
       </AuToolbar>
-      <div class="au-o-grid au-o-grid--fixed">
+      <AuToolbar @border="bottom" @size="medium" as |Group|>
+        <Group>
+          <div>
+            <AuHeading @level="2" @skin="6">Dossiernaam</AuHeading>
+            <p>{{this.model.case.id}}</p>
+          </div>
+        </Group>
+        <Group>
+          <div>
+            <AuHeading @level="2" @skin="6">Dossiernummer</AuHeading>
+            <p>{{this.model.case.identifier.value}}</p>
+          </div>
+        </Group>
+        <Group>
+          <div>
+            <AuHeading @level="2" @skin="6">Aangemaakt</AuHeading>
+            <p>{{moment-format this.model.case.created "DD/MM/YYYY"}}</p>
+          </div>
+        </Group>
+        <Group>
+          <div>
+            <AuHeading @level="2" @skin="6">Status</AuHeading>
+            <p><AuPill @skin="ongoing">Actief - Aanvraag ingediend</AuPill></p>
+          </div>
+        </Group>
+      </AuToolbar>
+      <div class="au-o-grid au-o-grid--fixed au-o-grid--flush">
         <div class="au-o-grid__item au-u-1-4">
           <div class="au-c-sidebar au-c-sidebar--inside">
             <div class="au-c-sidebar__content" tabindex="-1">

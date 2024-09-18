@@ -481,3 +481,12 @@
 .ember-basic-dropdown {
   z-index: 2;
 }
+
+.au-c-list--divider {
+  width: 100%;
+  li + li {
+    border-top: 1px dotted var(--au-gray-300);
+    margin-top: $au-unit-tiny;
+    padding-top: $au-unit-tiny;
+  }
+}

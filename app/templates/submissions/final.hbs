@@ -1,0 +1,93 @@
+<AuMainContainer as |m|>
+  <m.content>
+    <AuBodyContainer class="au-u-background-gray-100">
+      <AuToolbar @border="bottom" @size="medium" as |Group|>
+        <Group class="au-u-1-1">
+          <AuHeading @level="1" @skin="2">Inname openbaar domein voor een wielerwedstrijd</AuHeading>
+        </Group>
+      </AuToolbar>
+      <AuToolbar @border="bottom" @size="medium" as |Group|>
+        <Group>
+          <div>
+            <AuHeading @level="2" @skin="6">Dossiernaam</AuHeading>
+            <p>Omloop het Nieuwsblad</p>
+          </div>
+        </Group>
+        <Group>
+          <div>
+            <AuHeading @level="2" @skin="6">Dossiernummer</AuHeading>
+            <p>999</p>
+          </div>
+        </Group>
+        <Group>
+          <div>
+            <AuHeading @level="2" @skin="6">Aangemaakt</AuHeading>
+            <p>17-09-2024</p>
+          </div>
+        </Group>
+        <Group>
+          <div>
+            <AuHeading @level="2" @skin="6">Status</AuHeading>
+            <p><AuPill @skin="success">Volledig - Goedgekeurd</AuPill></p>
+          </div>
+        </Group>
+      </AuToolbar>
+      <div class="au-o-grid au-o-grid--fixed au-o-grid--flush">
+        <div class="au-o-grid__item au-u-1-4">
+          <div class="au-c-sidebar au-c-sidebar--inside">
+            <div class="au-c-sidebar__content" tabindex="-1">
+              <ul class="au-c-list-navigation">
+                <li class="au-c-list-navigation__item">
+                  <AuNavigationLink @route="submissions.final" role="menuitem">
+                    Vergunning
+                  </AuNavigationLink>
+                </li>
+                <li class="au-c-list-navigation__item">
+                  <AuNavigationLink @route="cases" role="menuitem">
+                    Activiteit
+                  </AuNavigationLink>
+                </li>
+                <li class="au-c-list-navigation__item">
+                  <AuNavigationLink @route="cases" role="menuitem" class="au-u-flex--wrap">
+                    <span class="au-u-1-1">Aanvraag Omloop het Nieuwsblad</span>
+                    <AuHelpText @skin="secondary" class="au-u-1-1">Ingediend door Bas Band op 17-09-2024</AuHelpText>
+                    <AuHelpText @skin="secondary" class="au-u-1-1">Aangemaakt op 18-09-2024</AuHelpText>
+                  </AuNavigationLink>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="au-o-grid__item au-u-3-4">
+          <AuBodyContainer @scroll={{true}}>
+            <div class="au-c-form">
+              <AuHeading @level="2" @skin="4">Informatie over de vergunning</AuHeading>
+              <AuHr />
+              <div class="au-o-flow">
+                <p>De organisatie / doortocht van de wielerwedstrijd wordt vergund. De organisatie dient in te staan voor de beveiliging van de wedstrijd door het inzetten van signaalgevers op het parcours volgende de aan deze vergunning gevoegde lijst.</p>
+                <AuButton @icon="download">Download vergunning</AuButton>
+                <AuButton @icon="download" @skin="secondary">Download bijlagen</AuButton>
+              </div>
+            </div>
+            <div class="au-c-form">
+              <AuHeading @level="2" @skin="4">Gelinkte besluiten</AuHeading>
+              <AuHr />
+              <AuFormRow>
+                <ul class="au-c-list au-c-list--divider">
+                  <li>
+                    <AuLinkExternal @icon="document" @href="#!">Besluit 1 Stad Gent</AuLinkExternal>
+                     <AuHelpText @skin="secondary" class="au-u-margin-top-none">Aangemaakt op 18-09-2024</AuHelpText>
+                  </li>
+                  <li>
+                    <AuLinkExternal @icon="document" @href="#!">Goedkeuring AWV</AuLinkExternal>
+                    <AuHelpText @skin="secondary" class="au-u-margin-top-none">Aangemaakt op 18-09-2024</AuHelpText>
+                  </li>
+                </ul>
+              </AuFormRow>
+            </div>
+          </AuBodyContainer>
+        </div>
+      </div>
+    </AuBodyContainer>
+  </m.content>
+</AuMainContainer>

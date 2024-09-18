@@ -20,6 +20,7 @@ Router.map(function () {
     this.route('submission', { path: '/:case_id' });
     this.route('submitted', { path: '/:case_id/submitted' });
     this.route('submitted-form');
+    this.route('final');
   });
   this.route('email');
   this.route('settings', function () {
