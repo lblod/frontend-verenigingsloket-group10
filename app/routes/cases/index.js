@@ -4,9 +4,22 @@ import { service } from '@ember/service';
 export default class CasesIndexRoute extends Route {
   @service store;
 
-  model() {
+  queryParams = {
+    page: {
+      refreshModel: true
+    },
+    size: {
+      refreshModel: true
+    },
+  };
+
+  model(params) {
     return this.store.query('case', {
-      include: 'event,identifier,submissions'
+      include: 'event,identifier,submissions',
+      page: {
+        number: params.page,
+        size: params.size
+      },
     });
   }
 }
