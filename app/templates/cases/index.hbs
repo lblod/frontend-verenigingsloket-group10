@@ -131,7 +131,7 @@
                 <card.header class="au-u-padding-bottom-none">
                   <div class="c-overview-card__header">
                     <div class="au-u-flex au-u-flex--vertical-center au-u-flex--spaced-tiny">
-                      <AuLink @route="submissions.submission" @model={{case.id}} class="au-u-h6 au-u-medium c-overview-card__link">
+                      <AuLink @route="submissions.submitted" @model={{case.id}} class="au-u-h6 au-u-medium c-overview-card__link">
                         {{case.event.description}}
                       </AuLink>
                       {{#if case.submissions.length}}
