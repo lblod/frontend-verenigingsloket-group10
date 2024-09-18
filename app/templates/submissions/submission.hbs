@@ -7,12 +7,19 @@
         </Group>
       </AuToolbar>
       <AuBodyContainer @scroll={{true}}>
-        <Form @model={{this.model.event}} />
+        <Form
+          @model={{this.model.event}}
+          @administrativeUnits={{this.administrativeUnits}}
+          @onAddAdministrativeUnit={{this.addAdministrativeUnit}} />
       </AuBodyContainer>
       <AuToolbar @border="top" @size="medium" as |Group|>
         <Group>
-          <AuButton {{on "click" this.submit}}>Indienen</AuButton>
-          <AuLink @skin="button-naked" @route="dashboard">Annuleer</AuLink>
+          <AuButton
+            @disabled={{this.isInvalid}}
+            {{on "click" this.submit}}>
+            Indienen
+          </AuButton>
+          <AuButton {{on "click" this.cancel}} @skin="naked">Annuleer</AuButton>
         </Group>
         <Group>
         </Group>

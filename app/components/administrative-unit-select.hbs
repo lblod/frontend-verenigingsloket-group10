@@ -1,0 +1,16 @@
+<PowerSelect
+  @allowClear={{true}}
+  @renderInPlace={{true}}
+  @loadingMessage="Aan het laden..."
+  @noMatchesMessage="Geen resultaten"
+  @searchEnabled={{true}}
+  @search={{perform this.search}}
+  @searchPlaceholder="Typ om te zoeken"
+  @searchMessage="Aan het zoeken..."
+  @options={{this.options}}
+  @selected={{@selected}}
+  @onChange={{@onChange}}
+  style="width: 200px"
+  as |option|>
+  {{option.name}}
+</PowerSelect>

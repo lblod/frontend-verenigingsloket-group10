@@ -235,11 +235,21 @@
           </tr>
         </:header>
         <:body>
-          <tr>
-            <td colspan="3">
-              <AuAlert @skin="info" @size="small" class="au-u-margin-bottom-none">Nog geen parcours toegevoegd</AuAlert>
-            </td>
-          </tr>
+          {{#if @administrativeUnits.length}}
+            {{#each @administrativeUnits as |administrativeUnit|}}
+              <tr>
+                <td>{{administrativeUnit.name}}</td>
+                <td></td>
+                <td></td>
+              </tr>
+            {{/each}}
+          {{else}}
+            <tr>
+              <td colspan="3">
+                <AuAlert @skin="info" @size="small" class="au-u-margin-bottom-none">Nog geen parcours toegevoegd</AuAlert>
+              </td>
+            </tr>
+          {{/if}}
         </:body>
         <:footer>
           <tr>
@@ -630,14 +640,16 @@
         <AuLabel>
           Gemeente
         </AuLabel>
-        <AuInput />
+        <AdministrativeUnitSelect
+          @selected={{this.selectedAdministrativeUnit}}
+          @onChange={{this.selectAdministrativeUnit}} />
       </AuFormRow>
        <AuFormRow @alignment="inline">
         <AuLabel>
           Aantal afgelegde km:
         </AuLabel>
         <AuFormRow
-            @alignment="post"
+          @alignment="post"
           >
             <AuLabel for="input">
               Km
@@ -654,6 +666,6 @@
     </div>
   </:body>
   <:footer>
-    <AuButton {{on "click" (fn (mut this.inlineParcoursModalOpen) false)}}>Rij toevoegen</AuButton>
+    <AuButton {{on "click" this.addAdministrativeUnit}}>Rij toevoegen</AuButton>
   </:footer>
 </AuModal>
