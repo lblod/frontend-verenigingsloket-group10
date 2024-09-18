@@ -18,8 +18,9 @@
                 </li>
                 <li class="au-c-list-navigation__item">
                   <AuNavigationLink @route="submissions.submitted-form" role="menuitem" class="au-u-flex--wrap">
-                    <span class="au-u-1-1">Aanvraag</span>
-                    <AuHelpText @skin="secondary" class="au-u-1-1">Ingediend op 17/09/2024</AuHelpText>
+                    <span class="au-u-1-1">Aanvraag {{this.model.event.description}}</span>
+                    <AuHelpText @skin="secondary" class="au-u-1-1">Ingediend door {{get (get this.model.submissions 0) "applicant.name"}}</AuHelpText>
+                    <AuHelpText @skin="secondary" class="au-u-1-1">Aangemaakt op {{moment-format this.model.case.created "DD/MM/YYYY"}}</AuHelpText>
                   </AuNavigationLink>
                 </li>
               </ul>
@@ -33,9 +34,9 @@
               <AuHr />
               <AuFormRow>
                 <ul class="au-c-list">
-                  <li><AuPill @skin="ongoing" @icon="circle-step-1">Ingediend bij Stad Gent</AuPill></li>
-                  <li><AuPill @skin="warning" @icon="circle-step-3">Geagendeerd bij Gemeente Destelbergen</AuPill></li>
-                  <li><AuPill @skin="ongoing" @icon="circle-step-1">Ingediend bij Stad Ninove</AuPill></li>
+                  {{#each this.model.submissions as |submission|}}
+                    <li><AuPill @skin="ongoing" @icon="circle-step-1">Ingediend bij Gemeente {{submission.administrativeUnit.name}}</AuPill></li>
+                  {{/each}}
                   <li><AuPill @skin="neutral" @icon="circle-pause">AWV goedkeuring nog niet verstuurd</AuPill></li>
                 </ul>
               </AuFormRow>
@@ -45,11 +46,10 @@
               <AuHr />
               <AuFormRow>
                 <ol class="au-u-1-1 au-c-list-steps">
-                  <li>Geagendeerd bij <strong>Gemeente Destelbergen</strong> op 18/09/2024</li>
-                  <li>Automatisch verstuurd naar <strong>Gemeente Destelbergen</strong> op 17/09/2024</li>
-                  <li>Automatisch verstuurd naar <strong>Stad Ninove</strong> op 17/09/2024</li>
-                  <li>Automatisch verstuurd naar <strong>Stad Gent</strong> op 17/09/2024</li>
-                  <li>Ingediend op 17/09/2024</li>
+                  {{#each this.model.submissions as |submission|}}
+                    <li>Automatisch verstuurd naar <strong>Gemeente {{submission.administrativeUnit.name}}</strong> op {{moment-format submission.date "DD/MM/YYYY"}}</li>
+                  {{/each}}
+                  <li>Aangemaakt op {{moment-format this.model.case.created "DD/MM/YYYY"}}</li>
                 </ol>
               </AuFormRow>
             </div>
