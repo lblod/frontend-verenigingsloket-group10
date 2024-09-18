@@ -17,7 +17,7 @@
                   </AuNavigationLink>
                 </li>
                 <li class="au-c-list-navigation__item">
-                  <AuNavigationLink @route="submissions.submitted-form" role="menuitem" class="au-u-flex--wrap">
+                  <AuNavigationLink @route="submissions.submission" @model={{this.model.case.id}} role="menuitem" class="au-u-flex--wrap">
                     <span class="au-u-1-1">Aanvraag {{this.model.event.description}}</span>
                     <AuHelpText @skin="secondary" class="au-u-1-1">Ingediend door {{get (get this.model.submissions 0) "applicant.name"}}</AuHelpText>
                     <AuHelpText @skin="secondary" class="au-u-1-1">Aangemaakt op {{moment-format this.model.case.created "DD/MM/YYYY"}}</AuHelpText>
