@@ -6,7 +6,7 @@ export default class ApplicationRoute extends Route {
   @service router;
   @service userProfile;
 
-  async beforeModel() {
+  async beforeModel(transition) {
     await this.session.setup();
 
     if (this.session.isAuthenticated) {
@@ -14,6 +14,10 @@ export default class ApplicationRoute extends Route {
         await this.userProfile.load();
       } catch(err) {
         await this.session.invalidate();
+      }
+    } else {
+      if (transition.to?.name != 'sparql') {
+        this.router.transitionTo('login');
       }
     }
   }
