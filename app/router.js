@@ -34,4 +34,5 @@ Router.map(function () {
     this.route('search');
     this.route('detail');
   });
+  this.route('sparql');
 });

@@ -15,8 +15,6 @@ export default class ApplicationRoute extends Route {
       } catch(err) {
         await this.session.invalidate();
       }
-    } else {
-      this.router.transitionTo('login');
     }
   }
 }
