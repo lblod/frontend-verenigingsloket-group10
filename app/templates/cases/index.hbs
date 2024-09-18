@@ -111,17 +111,12 @@
               <AuLabel for="search">Trefwoord</AuLabel>
               <AuInput id="search" @width="block" />
             </div>
-            <AuLink @skin="button" @route="cases.search" @icon="search">
+            <AuLink @skin="button" @route="cases" @icon="search">
               Zoek
             </AuLink>
           </div>
           </Group>
       </AuToolbar>
-      {{!-- <AuToolbar @border="bottom" @size="medium" as |Group|>
-        <Group>
-          <p class="au-u-h6">2346 resultaten voor <strong>'zoekterm'</strong></p>
-        </Group>
-      </AuToolbar> --}}
       <AuBodyContainer @scroll={{true}}>
         <div class="au-o-box au-o-box--small">
           <AuList as |listitem|>
@@ -132,8 +127,13 @@
                   <div class="c-overview-card__header">
                     <div class="au-u-flex au-u-flex--vertical-center au-u-flex--spaced-tiny">
                       <AuLink @route="submissions.submission" @model={{case.id}} class="au-u-h6 au-u-medium c-overview-card__link">
-                        {{case.event.description}}
+                         Aanvraag inname openbaar domein voor een wielerwedstrijd
                       </AuLink>
+                      <AuPill @skin="border"  @size="small" >{{case.identifier.value}}</AuPill>
+                  
+                      
+                    </div>
+                    <div class="au-u-flex au-u-flex--spaced-tiny">
                       {{#if case.submissions.length}}
                         <AuPill @skin="ongoing" @size="small" >
                           Actief - Aanvraag doorgestuurd
@@ -144,21 +144,11 @@
                         </AuPill>
                       {{/if}}
                     </div>
-                    <div class="au-u-flex au-u-flex--spaced-tiny">
-                      {{!-- {{#if case.deadline}}
-                      <AuPill @skin="warning"  @size="small">Deadline: {{case.deadline}}</AuPill>
-                      {{/if}}
-                      <AuPill @skin="border"  @size="small" >
-                        {{case.theme}}
-                      </AuPill> --}}
-                    </div>
                   </div>
                 </card.header>
                 <card.content>
-                  Dossiernummer: {{case.identifier.value}}
-                  Aangemaakt: {{case.created}}
-                  <p class="au-u-h-functional au-u-margin-bottom-tiny">
-                    Aanvraag inname openbaar domein voor een wielerwedstrijd
+                  <p class="au-u-h-functional au-u-muted au-u-margin-bottom-tiny">
+                    Aangemaakt: {{case.created}}
                   </p>
                   <p class="au-u-h-functional au-u-margin-top-tiny">
                     <span class="au-c-link au-c-link--external" aria-hidden="true">
