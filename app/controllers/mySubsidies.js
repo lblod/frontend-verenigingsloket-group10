@@ -5,7 +5,7 @@ export const mySubsidiesData = [
       "status": "Actief - Aanvraag doorgestuurd",
       "deadline": "9/15/25",
       "link": "#!",
-      "theme": "Vergunning"
+      "theme": "Toelating"
     }
   ]
 
