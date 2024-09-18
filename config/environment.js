@@ -6,6 +6,11 @@ module.exports = function (environment) {
     environment,
     rootURL: '/',
     locationType: 'history',
+    yasgui: {
+      // NOTE: look at app/modifiers/yasgui.js when changing this variable
+      defaultQuery: '{{YASGUI_DEFAULT_QUERY}}',
+      extraPrefixes: '{{YASGUI_EXTRA_PREFIXES}}',
+    },
     EmberENV: {
       EXTEND_PROTOTYPES: false,
       FEATURES: {
