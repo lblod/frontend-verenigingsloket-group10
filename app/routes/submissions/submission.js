@@ -6,7 +6,7 @@ export default class SubmissionsSubmissionRoute extends Route {
 
   async model(params) {
     const _case = await this.store.findRecord('case', params.case_id, {
-      include: 'event,identifier'
+      include: 'event.timeframe,identifier'
     });
 
     const event = await _case.event;

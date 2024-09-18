@@ -16,15 +16,21 @@ export default class SubmissionRoute extends Route {
   }
 
   async model() {
+    const timeframe = this.store.createRecord('timeframe', {
+
+    });
+
     const identifier = this.store.createRecord('identifier', {
       value: this.nextCaseNumber,
     });
 
-    const event = this.store.createRecord('event', {
+    await Promise.all([identifier.save(), timeframe.save()]);
 
+    const event = this.store.createRecord('event', {
+      timeframes: [timeframe],
     });
 
-    await Promise.all([identifier.save(), event.save()]);
+    await event.save();
 
     const _case = this.store.createRecord('case', {
       created: new Date(),

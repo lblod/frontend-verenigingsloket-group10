@@ -29,6 +29,8 @@ export default class SubmissionsSubmissionController extends Controller {
 
   @action
   async submit() {
+    const [timeframe] = await this.model.event.timeframes;
+    await timeframe.save();
     await this.model.event.save();
 
     for (let administrativeUnit of this.administrativeUnits) {
@@ -43,6 +45,8 @@ export default class SubmissionsSubmissionController extends Controller {
 
       await submission.save();
     }
+
+    this.administrativeUnits = [];
 
     this.router.transitionTo('cases.index');
   }
