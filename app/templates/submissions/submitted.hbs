@@ -12,7 +12,7 @@
             <div class="au-c-sidebar__content" tabindex="-1">
               <ul class="au-c-list-navigation">
                 <li class="au-c-list-navigation__item">
-                  <AuNavigationLink @route="submissions.submitted" role="menuitem">
+                  <AuNavigationLink @route="submissions.submitted" @model={{this.model.case.id}} role="menuitem">
                     Activiteit <span class="c-list-navigation__counter">1</span>
                   </AuNavigationLink>
                 </li>
