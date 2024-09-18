@@ -34,6 +34,12 @@ export default class SubmissionsSubmissionController extends Controller {
     await this.model.event.save();
 
     for (let administrativeUnit of this.administrativeUnits) {
+      const location = this.store.createRecord('location', {
+        name: administrativeUnit.name,
+        event: this.model.event,
+      });
+      await location.save();
+
       const applicant = await this.userProfile.user.organization;
       const now = new Date();
       const submission = this.store.createRecord('submission', {

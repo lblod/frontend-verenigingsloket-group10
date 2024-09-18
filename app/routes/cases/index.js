@@ -16,6 +16,7 @@ export default class CasesIndexRoute extends Route {
   model(params) {
     return this.store.query('case', {
       include: 'event,identifier,submissions',
+      sort: '-created',
       page: {
         number: params.page,
         size: params.size
