@@ -10,7 +10,11 @@
         <Group>
           <div>
             <AuHeading @level="2" @skin="6">Dossiernaam</AuHeading>
-            <p>{{this.model.case.event.description}}</p>
+            {{#if this.model.case.event.description}}
+              <p>{{this.model.case.event.description}}</p>
+            {{else}}
+              <p><AuPill @icon="alert-triangle" @skin="warning" @size="small">Geen titel ingegevoerd</AuPill></p>
+            {{/if}}
           </div>
         </Group>
         <Group>
