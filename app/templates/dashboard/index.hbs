@@ -21,10 +21,10 @@
             <f.legend>Type</f.legend>
             <f.content>
               <AuControlCheckbox
-                @label="Vergunningen"
+                @label="Toelating"
                 @name="Checkbox1"
-                @value="Vergunningen"
-                @identifier="Vergunningen"
+                @value="Toelating"
+                @identifier="Toelating"
                 @checked={{this.filters.tools}}
                 @disabled={{false}}
                 @onChange={{fn this.updateFilter 'tools'}}
@@ -113,7 +113,7 @@
       </AuToolbar>
       <AuToolbar @border="bottom" @size="medium" as |Group|>
         <Group>
-          <p class="au-u-h6">1 item</p>
+          <p class="au-u-h6">1823 items</p>
         </Group>
         <Group>
           <AuLabel for="sorting">Gesorteerd op:</AuLabel>
@@ -180,7 +180,7 @@
                   {{#if item.link}}
                   <p class="au-u-h-functional au-u-margin-top-tiny">
                     <span class="au-c-link au-c-link--external" aria-hidden="true">
-                      Naar de {{#if item.categorie}}vergunning{{else}}subsidie{{/if}}
+                      Naar de {{#if item.categorie}}toelating{{else}}subsidie{{/if}}
                       <AuIcon @icon="arrow-right" />
                     </span>
                   </p>
